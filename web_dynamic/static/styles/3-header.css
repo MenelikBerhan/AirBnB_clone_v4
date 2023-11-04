@@ -9,3 +9,17 @@ header .logo {
     left: 20px;
     height: 100%;
 }
+/* added for api_status circle */
+#api_status {
+    background-color: #cccccc;
+    border-radius: 50%;
+    height: 40px;
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    width: 40px;
+}
+/* if only .availabel was used no change since #api_status has higher specificity */
+#api_status.available {
+    background-color: #ff545f;
+}
