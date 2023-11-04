@@ -10,6 +10,7 @@ from flask import Flask, render_template
 import uuid
 app = Flask(__name__)
 
+
 @app.teardown_appcontext
 def close_db(error):
     """ code removes current SQLAlchemy Session """
@@ -41,4 +42,4 @@ def hbnb():
 
 if __name__ == "__main__":
     """ main func """
-    app.run(host='0.0.0.0', port=5001)
+    app.run(host='0.0.0.0', port=5000)
