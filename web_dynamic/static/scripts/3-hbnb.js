@@ -1,22 +1,29 @@
-// js for updating api_status and selected amenities list
+/*
+  js for updating api_status, setting selected amenities list from checkboxes
+  and fetching places from api
+*/
+
 function myfun () {
-  const amenities = {};
+  // set amenities list from checkboxes
+  const selectedAmenities = {};
   $('li input[type=checkbox]').change(function () {
     if (this.checked) {
-      amenities[this.dataset.name] = this.dataset.id;
+      selectedAmenities[this.dataset.name] = this.dataset.id;
     } else {
-      delete amenities[this.dataset.name];
+      delete selectedAmenities[this.dataset.name];
     }
-    $('div.amenities h4').text(Object.keys(amenities).sort().join(', '));
+    $('div.amenities h4').text(Object.keys(selectedAmenities).sort().join(', '));
   });
 
-  const url = 'http://0.0.0.0:5001/api/v1/status/';
+  // check api_status
+  const url = 'http://127.0.0.1:5001/api/v1/status/';
   $.get(url, function (data) {
     if (data.status === 'OK') $('div#api_status').addClass('available');
     else $('div#api_status').removeClass('available');
   });
 
-  const postUrl = 'http://0.0.0.0:5001/api/v1/places_search/';
+  // fetch places from api at start
+  const postUrl = 'http://127.0.0.1:5001/api/v1/places_search/';
   $.ajax({
     url: postUrl,
     type: 'POST',
