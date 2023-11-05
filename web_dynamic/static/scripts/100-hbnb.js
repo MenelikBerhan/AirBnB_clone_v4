@@ -46,14 +46,14 @@ function myfun () {
   });
 
   // check api_status
-  const url = 'http://127.0.0.1:5001/api/v1/status/';
+  const url = 'http://0.0.0.0:5001/api/v1/status/';
   $.get(url, function (data) {
     if (data.status === 'OK') $('div#api_status').addClass('available');
     else $('div#api_status').removeClass('available');
   });
 
   // fetch places from api at start
-  const postUrl = 'http://127.0.0.1:5001/api/v1/places_search/';
+  const postUrl = 'http://0.0.0.0:5001/api/v1/places_search/';
   $.ajax({
     url: postUrl,
     type: 'POST',
