@@ -41,15 +41,15 @@ button:hover {
     font-weight: 400;
     font-size: 14px;
 
-/* added for proper display of amenity name list from checkboxes */
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+/* added for proper display of name list from checkboxes */
     height: 20px;
     margin-bottom: 0px;
+    overflow: hidden;
     padding-bottom: 10px;
     padding-top: 5px;
-    width: 250px;
+    padding-right: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .locations {
     height: 100%;
@@ -106,6 +106,7 @@ button:hover {
     margin-top: 1.5%;
     margin-bottom: 5%;
     margin-left: 0px;
+    display: inline-block;
 }
 
 .amenities:hover .popover,
@@ -115,4 +116,8 @@ button:hover {
 /* added to make space b/n check box and amenity name */
 .popover input {
     margin-right: 10px;
+}
+/* added for proper display of amenities name list from checkboxes */
+.amenities h4 {
+    width: 250px;
 }
